@@ -1,5 +1,4 @@
 {% extends 'products_app/index.html' %}
-
 {% block content %}
 	<form class="" action="{% url 'login' %}" method="post">
 		{% csrf_token %}
@@ -7,7 +6,6 @@
 		Password: <input type="password" name="password" value="" placeholder="Enter Password"><br />
 		<button type="submit" name="button">Submit</button>
 	</form>
-
 	<p>
 		Not a user? Register <a href="{% url 'register' %}">here</a>
 	</p>

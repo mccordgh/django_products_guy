@@ -1,19 +1,31 @@
-{% block content %}
-<h1>HOME</h1>
-<h2>Products:</h2>
-	{% for product in products_list %}
-		<p>{{ forloop.counter }}. {{ product.name }} - {{product.category}} - ${{product.price}}</p>
-	{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Products Guy!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+				<h2>Products:</h2>
+					{% for product in products_list %}
+						<p>{{ forloop.counter }}. {{ product.name }} - {{product.category}} - ${{product.price}}</p>
+					{% endfor %}
+					<hr />
+				<h1> Create a Product </h1>
+				<form class="" action="{% url 'create_a_product' %}'" method="post">
+				  {% csrf_token %}
+				  Name: <input type="text" name="product_name" value="" placeholder="Enter a product name"><br />
+				  Category: <input type="text" name="product_category" value="" placeholder="Enter a category name"><br />
+				  Price: $<input type="text" name="product_price" value="" placeholder="Enter a price"><br />
+				  <button type="submit" name="button">Submit</button>
+				</form>
 
-<h1> Create a Product </h1>
-<form class="" action="{% url 'create_a_product' %}'" method="post">
-  {% csrf_token %}
-  Name: <input type="text" name="product_name" value="" placeholder="Enter a product name"><br />
-  Category: <input type="text" name="product_category" value="" placeholder="Enter a category name"><br />
-  Price: $<input type="text" name="product_price" value="" placeholder="Enter a price"><br />
-  <button type="submit" name="button">Submit</button>
-</form>
-
-<h2><a href="{% url 'logout' %}">Log out!</a></h2>
-
-{% endblock %}
+				<h2><a href="{% url 'logout' %}">Log out!</a></h2>
+      </div>
+    </div>
+    <br />
+  </body>
+</html>

@@ -1,4 +1,20 @@
-<h1>PRODUCT CREATED:</h1><br />
-{% csrf_token %}
-<p>"<b>{{ product.name }}</b> in Department: <b>{{ product.category }}</b> costs <b>${{ product.price }}</b>"</p><br />
-<a href="{% url 'list_products' %}">Back to Product List</a>
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Products Guy!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+      	<h1>PRODUCT CREATED:</h1><br />
+				{% csrf_token %}
+				<p>"<b>{{ product.name }}</b> in Department: <b>{{ product.category }}</b> costs <b>${{ product.price }}</b>"</p><br />
+				<a href="{% url 'list_products' %}">Back to Product List</a>
+      </div>
+    </div>
+    <br />
+  </body>
+</html>

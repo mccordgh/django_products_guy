@@ -1,0 +1,17 @@
+.wrapper {
+	width: 100%;
+	margin: 0;
+}
+
+.content {
+	text-align: center;
+	background-color: lightblue;
+	width: 70%;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.content input, button {
+	margin: 10px;
+	padding: 10px;
+}
