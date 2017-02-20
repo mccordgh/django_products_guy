@@ -5,18 +5,10 @@
     <title>Django Auth Tutorial</title>
   </head>
   <body>
-    <h1>INDEX</h1><br />
+    <h1>PRODUCT GUY</h1><br />
+    <h2>{{ page_info }}</h2><br />
     {% block content %}
     {% endblock %}
     <br />
-    <h1> Create a Product </h1>
-    <form class="" action="{% url 'create_a_product' %}'" method="post">
-        {% csrf_token %}
-      Name: <input type="text" name="product_name" value="" placeholder="Enter a product name"><br />
-      Category: <input type="text" name="product_category" value="" placeholder="Enter a category name"><br />
-      Price: $<input type="text" name="product_price" value="" placeholder="Enter a price"><br />
-      <button type="submit" name="button">Submit</button>
-    </form>
-
   </body>
 </html>

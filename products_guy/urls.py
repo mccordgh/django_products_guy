@@ -19,7 +19,11 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.list_products, name='index'),
-    url(r'^success/', views.CreateProductSuccess.as_view(), name='create_product_success'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^register/', views.Register.as_view(), name='register'),
+    url(r'^home/', views.list_products, name='list_products'),
+    url(r'^login/', views.login_user, name='login'),
+    url(r'^register_user/', views.register_user, name='register_user'),
+    url(r'^logout/', views.logout_user, name= 'logout'),
     url(r'^create_a_product/', views.create_a_product, name='create_a_product'),
 ]

@@ -1,0 +1,13 @@
+{% extends 'products_app/index.html' %}
+
+{% block content %}
+	<form class="" action="{% url 'register_user' %}" method="post">
+		{% csrf_token %}
+		<input type="text" name="first_name" value="" placeholder="first_name"><br />
+		<input type="text" name="last_name" value="" placeholder="last_name"><br />
+		<input type="text" name="email" value="" placeholder="email"><br />
+		<input type="text" name="username" value="" placeholder="username"><br />
+		<input type="text" name="password" value="" placeholder="password"><br />
+		<button type="submit" name="button">Submit</button><br />
+	</form>
+{% endblock %}
