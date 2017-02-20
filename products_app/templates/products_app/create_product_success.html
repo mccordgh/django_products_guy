@@ -1,0 +1,4 @@
+<h1>PRODUCT CREATED:</h1><br />
+{% csrf_token %}
+<p>"<b>{{ product.name }}</b> in Department: <b>{{ product.category }}</b> costs <b>${{ product.price }}</b>"</p><br />
+<a href="{% url 'index' %}">Back to Product List</a>

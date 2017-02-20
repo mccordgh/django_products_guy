@@ -1,0 +1,9 @@
+{% extends 'products_app/index.html' %}
+
+{% block content %}
+<h2>Products:</h2>
+	{% for product in products_list %}
+		<p>{{ forloop.counter }}. {{ product.name }} - {{product.category}} - ${{product.price}}</p>
+	{% endfor %}
+<h2> End list </h2>
+{% endblock %}
